@@ -4,18 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jewel Fernandes | Portfolio</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     /* Reset */
     * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;}
 
     body {
-      background: linear-gradient(135deg, #000000, #2c2c2c);
-      color: #fff;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      color: #fff;
+      position: relative;
+    }
+
+    /* Background with gradient overlay on image */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: 
+        linear-gradient(135deg, rgba(0,0,0,0.9), rgba(40,40,40,0.9)),
+        url("https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80");
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: -1;
     }
 
     .container {
@@ -55,6 +77,9 @@
     }
 
     .link-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
       color: #fff;
       border: 2px solid #fff;
@@ -85,18 +110,20 @@
       border-color: #fff;
     }
 
-    /* Background animation elements */
+    /* Background floating circles */
     .circle {
       position: absolute;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.08);
       animation: move 20s linear infinite;
+      z-index: -1;
     }
 
     .circle:nth-child(1) { width: 200px; height: 200px; top: 10%; left: 15%; }
     .circle:nth-child(2) { width: 300px; height: 300px; bottom: 15%; right: 10%; animation-duration: 25s; }
     .circle:nth-child(3) { width: 150px; height: 150px; top: 70%; left: 5%; animation-duration: 30s; }
 
+    /* Animations */
     @keyframes move {
       0% { transform: translateY(0) rotate(0); }
       50% { transform: translateY(-40px) rotate(180deg); }
@@ -122,6 +149,7 @@
   </style>
 </head>
 <body>
+  <div class="overlay"></div>
   <!-- Animated Background Circles -->
   <div class="circle"></div>
   <div class="circle"></div>
@@ -133,10 +161,18 @@
     <p>Masters in Engineering Design | Mechanical Engineer | 3D Artist</p>
 
     <div class="links">
-      <a href="https://www.linkedin.com/in/jewel-fernandes1211/" target="_blank" class="link-btn">LinkedIn</a>
-      <a href="https://drive.google.com/file/d/1KAIxwxU7csAndiEQLr7BQVb1cVXklWPw/view?usp=sharing" target="_blank" class="link-btn">Resume</a>
-      <a href="https://jewelfernandes.wixsite.com/melange-designs-2" target="_blank" class="link-btn">Website</a>
-      <a href="https://www.youtube.com/@melange3D" target="_blank" class="link-btn">YouTube</a>
+      <a href="https://www.linkedin.com/in/jewel-fernandes1211/" target="_blank" class="link-btn">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://drive.google.com/file/d/1KAIxwxU7csAndiEQLr7BQVb1cVXklWPw/view?usp=sharing" target="_blank" class="link-btn">
+        <i class="fas fa-file-alt"></i> Resume
+      </a>
+      <a href="https://jewelfernandes.wixsite.com/melange-designs-2" target="_blank" class="link-btn">
+        <i class="fas fa-globe"></i> Website
+      </a>
+      <a href="https://www.youtube.com/@melange3D" target="_blank" class="link-btn">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
     </div>
   </div>
 </body>
