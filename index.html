@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jewel Fernandes | Portfolio</title>
+  <style>
+    /* Reset */
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;}
+
+    body {
+      background: linear-gradient(135deg, #000000, #2c2c2c);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 700px;
+      padding: 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 20px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      animation: slideIn 1.5s ease;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #ccc;
+      animation: fadeInUp 2s ease;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .link-btn {
+      text-decoration: none;
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1rem;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .link-btn::before {
+      content: "";
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: #fff;
+      z-index: -1;
+      transition: left 0.4s ease;
+    }
+
+    .link-btn:hover::before {
+      left: 0;
+    }
+
+    .link-btn:hover {
+      color: #000;
+      border-color: #fff;
+    }
+
+    /* Background animation elements */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      animation: move 20s linear infinite;
+    }
+
+    .circle:nth-child(1) { width: 200px; height: 200px; top: 10%; left: 15%; }
+    .circle:nth-child(2) { width: 300px; height: 300px; bottom: 15%; right: 10%; animation-duration: 25s; }
+    .circle:nth-child(3) { width: 150px; height: 150px; top: 70%; left: 5%; animation-duration: 30s; }
+
+    @keyframes move {
+      0% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-40px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;} to {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes slideIn {
+      from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated Background Circles -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <div class="container">
+    <img src="myphoto.jpg" alt="Profile Picture" class="profile-pic">
+    <h1>Jewel Fernandes</h1>
+    <p>Masters in Engineering Design | Mechanical Engineer | 3D Artist</p>
+
+    <div class="links">
+      <a href="https://www.linkedin.com/in/jewel-fernandes1211/" target="_blank" class="link-btn">LinkedIn</a>
+      <a href="https://drive.google.com/file/d/1KAIxwxU7csAndiEQLr7BQVb1cVXklWPw/view?usp=sharing" target="_blank" class="link-btn">Resume</a>
+      <a href="https://jewelfernandes.wixsite.com/melange-designs-2" target="_blank" class="link-btn">Website</a>
+      <a href="https://www.youtube.com/@melange3D" target="_blank" class="link-btn">YouTube</a>
+    </div>
+  </div>
+</body>
+</html>
